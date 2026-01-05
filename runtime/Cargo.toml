@@ -1,0 +1,29 @@
+[package]
+name = "runtime"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.release]
+debug = true
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
+[build-dependencies]
+cxx-build = "1.0.188"
+
+[dependencies]
+clap = { version = "4.5.53", features = ["derive"] }
+cxx = "1.0.188"
+mlua = { version = "0.11.5", features = [
+  "luajit",
+  "vendored",
+  "async",
+  "send",
+  "userdata-wrappers",
+] }
+walkdir = "2.5.0"
