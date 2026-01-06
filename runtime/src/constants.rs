@@ -1,0 +1,1 @@
+pub const MAX_WATCHER_EVENTS_PER_FRAME: usize = 128;

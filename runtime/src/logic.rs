@@ -55,7 +55,7 @@ impl Logic {
     }
 }
 
-pub fn test() -> Result<(), error::Error> {
+pub fn logic_test() -> Result<(), error::Error> {
     let mut logic = Logic::new();
     logic.insert("not", 1, |logic, input| {
         return logic.output("nand", vec![input[0], input[0]]);

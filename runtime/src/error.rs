@@ -8,6 +8,9 @@ pub enum Error {
     SystemTimeError(String),
     ParseError(String),
     LogicError(String),
+    ChannelSendError(String),
+    ChannelReceiveError(String),
+    WatcherError(String),
 }
 
 impl std::fmt::Display for Error {
@@ -22,6 +25,9 @@ impl std::fmt::Display for Error {
             Error::SystemTimeError(err_str) => write!(f, "5|{}", err_str),
             Error::ParseError(err_str) => write!(f, "6|{}", err_str),
             Error::LogicError(err_str) => write!(f, "7|{}", err_str),
+            Error::ChannelSendError(err_str) => write!(f, "8|{}", err_str),
+            Error::ChannelReceiveError(err_str) => write!(f, "9|{}", err_str),
+            Error::WatcherError(err_str) => write!(f, "10|{}", err_str),
         }
     }
 }
